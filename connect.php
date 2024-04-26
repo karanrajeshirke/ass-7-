@@ -8,10 +8,10 @@ $USERNAME = 'root';
 $PASSWORD = '';
 $DATABASE = 'signupforms';
 
-$con = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $DATABASE);
+$con = mysqli_connect('localhost', $USERNAME, $PASSWORD, $DATABASE);
 
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// if (!$con) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
 
 ?>

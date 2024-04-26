@@ -1,7 +1,9 @@
 <?php
 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include 'connect.php';
@@ -9,34 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM `registeration` WHERE username = '$username'";
-      
-    $result=mysqli_query($con,$sql);
-
-    if($result)
-    {
-        $num=mysqli_num_rows($result);
-
-        if($num>0)
-        {
-            echo "user already exists";
-        }
-        else
-        {
-$sql = "INSERT INTO `registeration` (username, password) VALUES ('$username', '$password')";
-
+    $sql = "INSERT INTO `registeration` (username, password) VALUES ('$username', '$password')";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
-        echo "sign up successfully";
-        header('location:home.php');
-
-    } else {
-        die(mysqli_error($con));
-    }
-        }
-    }
-
+        header('location:login.php');
+    } 
    
 }
 
@@ -61,3 +41,4 @@ $sql = "INSERT INTO `registeration` (username, password) VALUES ('$username', '$
     
 </body>
 </html>
+

@@ -3,6 +3,7 @@ session_start();
 
 if(!isset($_SESSION['username']))
 {
+    //NOT LOGGED IN 
     header('location:login.php');
 }
 ?>
@@ -24,9 +25,16 @@ if(!isset($_SESSION['username']))
     ?>
 
 
+    <div>
+        <div>
+            Heelo how are you?
+        </div>
+    </div>
+    </h1>
+
 <a href="logout.php">Logout</a>
 
 
-    </h1>
+
 </body>
 </html>
